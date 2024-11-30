@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Improvement Suggestions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Codebase
 
-Currently, two official plugins are available:
+1. **Centralized State Management**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   - Move data management from the `Dashboard` component to a centralized store (e.g., Redux, Context API) for easier scaling and consistency.
 
-## Expanding the ESLint configuration
+2. **Use Constants**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   - Replace hardcoded strings with reusable constants for better maintainability and fewer errors.
 
-- Configure the top-level `parserOptions` property like this:
+3. **Modular API Calls**
+   - Move API logic to dedicated service files or custom hooks to improve reusability and cleaner components.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Roles & Permissions
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. **Better Permissions**
+   - Add fine-grained permissions (e.g., `canEdit`, `canView`) for more flexibility in managing user/admin actions.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## Components
+
+5. **More Flexible Props**
+
+   - Add customizable props like `height`, `width`, and `styles` to common components (`Switch`, `Modal`) for better adaptability.
+
+6. **Improve Reusability**
+   - Refactor components to support more use cases and provide sensible defaults with optional overrides.
+
+---
