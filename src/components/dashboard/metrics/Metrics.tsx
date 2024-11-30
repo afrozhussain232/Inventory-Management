@@ -1,15 +1,27 @@
 import style from "./metrics.module.scss";
 import { formatNumber } from "../../../utils/number";
 import { MetricsData } from "../../types/dashboard";
+import { ReactComponent as Cart } from "../../../assets/icons/cart.svg";
+import { ReactComponent as Revenue } from "../../../assets/icons/revenue.svg";
+import { ReactComponent as Stock } from "../../../assets/icons/stock.svg";
+import { ReactComponent as Category } from "../../../assets/icons/category.svg";
+import React from "react";
 
 type MetricCardProps = {
   title: string;
   value: number;
-  icon: string;
+  icon: keyof typeof MetricIcons;
 };
 
 type MetricsProps = {
   metrics: MetricsData;
+};
+
+const MetricIcons = {
+  cart: Cart,
+  revenue: Revenue,
+  stock: Stock,
+  category: Category,
 };
 
 const MetricCard = ({ title, value, icon }: MetricCardProps) => {
@@ -17,7 +29,7 @@ const MetricCard = ({ title, value, icon }: MetricCardProps) => {
     <div>
       <div className={style.metricCard}>
         <div className={style.icon}>
-          <img src={`src/assets/icons/${icon}.svg`} alt={icon} />
+          {React.createElement(MetricIcons[icon])}
         </div>
         <div className={style.details}>
           <p className={style.title}>{title}</p>
