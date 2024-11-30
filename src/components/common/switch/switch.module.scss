@@ -1,0 +1,28 @@
+.switch {
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &.on {
+    background-color: var(--primary);
+  }
+
+  .toggle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: left 0.3s ease;
+  }
+
+  &.on .toggle {
+    left: 22.5px;
+  }
+}

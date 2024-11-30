@@ -1,0 +1,25 @@
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+
+  .metricCard {
+    display: flex;
+    column-gap: 20px;
+    padding: 25px;
+    background-color: var(--primary-light);
+    border-radius: 10px;
+    .details {
+      .title {
+        margin: 0px;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+      .value {
+        margin: 0px;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

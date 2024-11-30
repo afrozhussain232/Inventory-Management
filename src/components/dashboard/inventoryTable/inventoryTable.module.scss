@@ -1,0 +1,77 @@
+.inventoryTable {
+  display: flex;
+  flex-direction: column;
+
+  table {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    thead {
+      border-bottom: solid 1px var(--border);
+    }
+    tr {
+      display: grid;
+      grid-template-columns: 1fr repeat(5, 0.6fr);
+      padding: 10px;
+      border-bottom: solid 1px var(--border);
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        user-select: none;
+      }
+
+      th {
+        display: flex;
+        text-align: left;
+        font-weight: 400;
+        padding: 5px;
+        span {
+          background-color: #161718;
+          padding: 10px;
+          border-radius: 10px;
+          color: var(--primary);
+          font-size: 0.8rem;
+        }
+      }
+      td {
+        font-size: 0.9rem;
+        font-weight: 400;
+        padding: 10px;
+        display: flex;
+        &.disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+          user-select: none;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+        .action {
+          display: flex;
+          cursor: pointer;
+          &.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            user-select: none;
+          }
+          &.edit {
+            color: var(--primary);
+          }
+          &.visibility {
+            color: #c294d1;
+          }
+          &.delete {
+            color: #f44336;
+          }
+        }
+      }
+    }
+  }
+}
