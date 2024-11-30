@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Switch.module.scss";
+import styles from "./switch.module.scss";
 
 type SwitchProps = {
   isOn?: boolean;
